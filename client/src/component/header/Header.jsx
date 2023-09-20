@@ -32,7 +32,7 @@ export const Header = ({ type }) => {
 
 	return (
 		<div className='bg-green-600 text-white flex relative '>
-			<div className={type === "list" ? "mx-16 my-12": "mx-16 mt-5 mb-24"}>
+			<div className={type === "list" ? "w-11/12 mx-auto my-12": "w-11/12 mx-auto mt-5 mb-24"}>
 				<div className='flex justify-start gap-10 '>
 					<div className='flex items-center gap-2  border-2 rounded-full border-white px-3 py-1'>
 						<FontAwesomeIcon icon={faBed} />
@@ -65,7 +65,7 @@ export const Header = ({ type }) => {
 							more with a free Lamabooking account
 						</p>
 						<button className="bg-green-400 text-white px-4 py-1 rounded">Sign in / Register</button>
-						<div className='h-12 bg-white 400  border-2 border-yellow-600 flex items-center justify-around pl-3 py-2 rounded-lg absolute -bottom-6 w-11/12 '>
+						<div className='h-12 bg-white 400  border-2 border-yellow-600 flex items-center justify-around pl-3 py-2 rounded-lg absolute -bottom-6 w-11/12 mx-auto '>
 							<div className='flex items-center gap-3'>
 								<FontAwesomeIcon icon={faBed} className='text-gray-400' />
 								<input className='border-none outline-none' type="text" placeholder='where are you going?' />
@@ -79,7 +79,7 @@ export const Header = ({ type }) => {
 									onChange={item => setDate([item.selection])}
 									moveRangeOnFirstSelection={false}
 									ranges={date}
-									className='absolute top-12'
+									className='absolute top-12 z-10'
 								/>}
 							</div>
 							<div className='flex items-center gap-3'>
@@ -87,7 +87,7 @@ export const Header = ({ type }) => {
 								<span onClick={() => setOpenOptions(!openOptions)} className='text-gray-400'>{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
 								{
 									openOptions &&
-									<div className="absolute top-12 bg-white text-gray-400  border rounded-md shadow-slate-300 shadow-xl flex flex-col justify-between">
+									<div className="absolute top-12 bg-white text-gray-400  border rounded-md shadow-slate-300 shadow-xl flex flex-col justify-between z-10">
 										<div className="w-48 flex justify-around gap-3 m-3 ">
 											<span>Adult</span>
 											<div className='flex items-center gap-3 font-semibold text-black'>
