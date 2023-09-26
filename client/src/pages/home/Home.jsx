@@ -4,6 +4,8 @@ import { Nav } from '../../component/navbar/Nav'
 import { Featured } from '../../component/featured/Featured'
 import { PropertyList } from '../../component/PropertyList/PropertyList'
 import { FeatureProperties } from '../../component/FeaturedProperties/FeatureProperties'
+import { MailList } from '../../component/MailList/MailList'
+import { Footer } from '../../component/Footer/Footer'
 
 export const Home = () => {
 	return (
@@ -16,6 +18,8 @@ export const Home = () => {
 				<PropertyList />
 				<h1 className="text-2xl font-bold w-full">Home guests love</h1>
 				<FeatureProperties />
+				<MailList />
+				<Footer />
 			</div>
 
 		</div>
