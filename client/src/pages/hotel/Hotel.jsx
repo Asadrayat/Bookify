@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Nav } from '../../component/navbar/Nav'
 import { Header } from '../../component/header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocation, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocation, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { MailList } from '../../component/MailList/MailList'
 import { Footer } from '../../component/Footer/Footer'
 
 export const Hotel = () => {
+	const [slideNumber, setSlideNumber] = useState(0);
+	const [open, setOpen] = useState(false);
 	const photos = [
 		{
 			src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
@@ -27,12 +29,36 @@ export const Hotel = () => {
 			src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707389.jpg?k=52156673f9eb6d5d99d3eed9386491a0465ce6f3b995f005ac71abc192dd5827&o=&hp=1",
 		},
 	];
+	const handleOpen = (i) => {
+		setSlideNumber(i);
+		setOpen(true);
+	}
+	const handleMove = (dir) => {
+		let newSlideNumber;
+		if (dir === "l") {
+			newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+		} else {
+			newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+		}
+		setSlideNumber(newSlideNumber)
+
+	}
 	return (
 		<div>
 			<Nav />
 			<Header type="list" />
+			{open && <div className='sticky  top-0 left-0  h-screen w-full z-50   flex items-center justify-center'>
+				<FontAwesomeIcon className='absolute top-5 right-5 text-3xl text-gray-400 cursor-pointer' onClick={() => setOpen(false)} icon={faCircleXmark} />
+				<FontAwesomeIcon className='m-5 text-5xl text-gray-400 cursor-pointer' onClick={() => handleMove("l")} icon={faCircleArrowLeft} />
+				<div className="sw">
+					<img className='3/4 h-3/4' src={photos[slideNumber].src} alt="" />
+				</div>
+				<FontAwesomeIcon className='m-5 text-5xl text-gray-400 cursor-pointer' onClick={() => handleMove("r")} icon={faCircleArrowRight} />
+			</div>}
 			<div className=" w-9/12 mx-auto flex flex-col justify-center mt-5">
+
 				<div className="w-full flex flex-col gap-3">
+
 					<div className="text-2xl font-bold "></div>
 
 					<div className="text-sm flex relative items-center gap-3">
@@ -47,9 +73,9 @@ export const Hotel = () => {
 						Book a stay over $114 at this property and get a free airport taxi
 					</span>
 					<div className="grid grid-cols-3 gap-3">
-						{photos.map((photo) => (
+						{photos.map((photo, i) => (
 							<div className="">
-								<img src={photo.src} alt="" className='w-full object-cover cursor-pointer' />
+								<img onClick={() => handleOpen(i)} src={photo.src} alt="" className='w-full object-cover cursor-pointer' />
 							</div>
 						))}
 					</div>
@@ -85,9 +111,9 @@ export const Hotel = () => {
 				</div>
 			</div>
 			<MailList />
-				<div className='mt-5 mx-auto w-9/12'>
+			<div className='mt-5 mx-auto w-9/12'>
 				<Footer />
-				</div>
+			</div>
 		</div>
 	)
 }
