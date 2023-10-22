@@ -2,14 +2,14 @@ import React from 'react'
 
 export const SearchItem = () => {
 	return (
-		<div className="border border-solid border-gray-400 p-3 rounded-md flex justify-between gap-5 mb-5 w-full">
+		<div className="border border-solid border-gray-400 p-3 rounded-md flex flex-col md:flex-row lg:flex-row justify-between gap-5 mb-5 w-full">
 			<img
 				src="https://cf.bstatic.com/xdata/images/hotel/square600/261707778.webp?k=fa6b6128468ec15e81f7d076b6f2473fa3a80c255582f155cae35f9edbffdd78&o=&s=1"
 				alt=""
-				className="w-3/12 h-32 md:h-auto lg:h-60 object-cover"
+				className="lg:w-3/12 md:w-3/12 h-32 md:h-auto lg:h-60 object-cover"
 			/>
 			<div className="flex flex-col w-full gap-3 ">
-				<h1 className="text-xl text-green-600">Tower Street Apartments</h1>
+				<h1 className="lg:text-xl md:text-xl text-green-600">Tower Street Apartments</h1>
 				<span className="text-sm bg-blue-800 text-white font-semibold w-max p-1 rounded-md">500m from center</span>
 				<span className="text-sm ">Free airport taxi</span>
 				<span className="text-sm font-bold">
@@ -29,7 +29,7 @@ export const SearchItem = () => {
 					<button className='bg-green-700 text-white p-2 font-bold border-0'>8.9</button>
 				</div>
 				<div className="text-right flex flex-col gap-2">
-					<span className="text-2xl">$112</span>
+					<span className="text-base lg:text-2xl  md:text-2xl ">$112</span>
 					<span className="text-sm text-gray-600">Includes taxes and fees</span>
 					<button className="bg-green-700 text-white font-bold px-2 py-1 border-0 cursor-pointer rounded-md ">See availability</button>
 				</div>

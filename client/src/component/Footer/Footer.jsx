@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Footer = () => {
 	return (
-		<div className="w-full text-xs">
-			<div className="w-full flex justify-between ">
+		<div className="lg:w-9/12 md:w-9/12 mx-auto ml-2 mt-5 text-xs">
+			<div className="w-full gap-1 flex justify-between ">
 				<ul className="list-none p-0">
 					<li className="mb-3 opacity-70 text-green-900  cursor-pointer ">Countries</li>
 					<li className="mb-3 opacity-70 text-green-900  cursor-pointer ">Regions</li>
@@ -44,7 +44,7 @@ export const Footer = () => {
 					<li className="mb-3 opacity-70 text-green-900  cursor-pointer ">Terms & conditions</li>
 				</ul>
 			</div>
-			<div className="text-center text-green-900 opacity-75 my-2">Copyright © 2022 Lamabooking.</div>
+			<div className="text-center text-green-900 opacity-75 my-2">Copyright © 2023 Bookify.</div>
 		</div>
 	)
 }

@@ -17,8 +17,8 @@ export const List = () => {
 			<Nav />
 			<Header type="list" />
 			<div className="flex mx-auto w-11/12 lg:w-9/12  justify-center mt-5">
-				<div className="w-full flex gap-5">
-					<div className="w-full md:w-5/12 lg:w-1/4 bg-yellow-500 p-3 border rounded-xl sticky top-3 h-max ">
+				<div className="w-full flex gap-1 md:gap-5 lg:gap-5">
+					<div className="w-1/2 md:w-5/12 lg:w-1/4 bg-yellow-500 p-3 border rounded-xl sticky top-3 h-max ">
 						<div className="text-xl text-white mb-3 "></div>
 						<div className="flex flex-col gap-2 mb-3">
 							<label className='text-sm' >Destination</label>

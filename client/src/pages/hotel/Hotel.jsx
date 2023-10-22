@@ -55,14 +55,14 @@ export const Hotel = () => {
 				</div>
 				<FontAwesomeIcon className='m-5 text-5xl text-gray-400 cursor-pointer' onClick={() => handleMove("r")} icon={faCircleArrowRight} />
 			</div>}
-			<div className=" w-9/12 mx-auto flex flex-col justify-center mt-5">
+			<div className=" md:w-9/12 w-11/12 lg:w-9/12  mx-auto flex flex-col justify-center mt-5">
 
 				<div className="w-full flex flex-col gap-3">
 
 					<div className="text-2xl font-bold "></div>
 
 					<div className="text-sm flex relative items-center gap-3">
-						<button className='absolute top-3 right-0 bg-green-700 text-white font-bold px-2 py-1 border-0 cursor-pointer rounded-md'>Reserve or Book Now!</button>
+						<button className='absolute md:top-3 top lg:top-3 right-0 bg-green-700 text-white font-bold px-2 py-1 border-0 cursor-pointer rounded-md'>Reserve or Book Now!</button>
 						<FontAwesomeIcon icon={faLocationDot} />
 						<span>Elton St 125 New york</span>
 					</div>
@@ -72,7 +72,7 @@ export const Hotel = () => {
 					<span className='text-blue-600 font-bold'>
 						Book a stay over $114 at this property and get a free airport taxi
 					</span>
-					<div className="grid grid-cols-3 gap-3">
+					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
 						{photos.map((photo, i) => (
 							<div className="">
 								<img onClick={() => handleOpen(i)} src={photo.src} alt="" className='w-full object-cover cursor-pointer' />
@@ -81,8 +81,8 @@ export const Hotel = () => {
 					</div>
 					<div className="grid lg:grid-cols-4 md:grid-cols-3 justify-between gap-5 mt-5">
 						<div className="md:col-span-2 lg:col-span-3">
-							<h1 className="text-2xl font-bold">Stay in the heart of City</h1>
-							<p className="text-md mt-5">
+							<h1 className="text-base lg:text-2xl  md:text-2xl  font-bold">Stay in the heart of City</h1>
+							<p className=" mt-5">
 								Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
 								Street Apartments has accommodations with air conditioning and
 								free WiFi. The units come with hardwood floors and feature a
@@ -97,12 +97,12 @@ export const Hotel = () => {
 							</p>
 						</div>
 						<div className="flex-3 bg-green-100 p-5 flex flex-col gap-5">
-							<h1 className='text-2xl md:text-lg font-bold'>Perfect for a 9-night stay!</h1>
-							<span>
+							<h1 className='text-base lg:text-2xl  md:text-md  font-bold'>Perfect for a 9-night stay!</h1>
+							<span className='text-sm lg:text-base md:text-base'>
 								Located in the real heart of Krakow, this property has an
 								excellent location score of 9.8!
 							</span>
-							<h2 className='text-xl lg:text-2xl'>
+							<h2 className='text-base lg:text-2xl  md:text-2xl'>
 								<b>$945</b> (9 nights)
 							</h2>
 							<button className='bg-green-700 text-white font-semibold px-2 py-1 border-0 cursor-pointer rounded-md'>Reserve or Book Now!</button>

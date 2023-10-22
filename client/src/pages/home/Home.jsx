@@ -14,14 +14,13 @@ export const Home = () => {
 			<Header />
 			<div className="mt-12 flex w-11/12 mx-auto flex-col items-center gap-8">
 				<Featured />
-				<h1 className="text-2xl font-bold w-full">Browse by property type</h1>
+				<h1 className="text-base lg:text-2xl  md:text-2xl font-bold w-full">Browse by property type</h1>
 				<PropertyList />
-				<h1 className="text-2xl font-bold w-full">Home guests love</h1>
+				<h1 className="text-base lg:text-2xl  md:text-2xl font-bold w-full">Home guests love</h1>
 				<FeatureProperties />
-				<MailList />
-				<Footer />
 			</div>
-
+			<MailList />
+			<Footer />
 		</div>
 	)
 }

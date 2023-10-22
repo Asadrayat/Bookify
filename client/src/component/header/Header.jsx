@@ -38,32 +38,32 @@ export const Header = ({ type }) => {
 
 	return (
 		<div className='bg-green-600 text-white flex relative '>
-			<div className={type === "list" ? "w-11/12 mx-auto my-12" : "w-11/12 mx-auto mt-5 mb-24"}>
-				<div className='flex justify-start gap-10 '>
-					<div className='flex items-center gap-2  border-2 rounded-full border-white px-3 py-1'>
-						<FontAwesomeIcon icon={faBed} />
-						<span>Stays</span>
+			<div className={type === "list" ? "mx-1 w-full md:w-11/12 lg:w-11/12 md:mx-auto lg:mx-auto my-12" : " w-full md:w-11/12 lg:w-11/12 md:mx-auto lg:mx-auto my-12 mt-5 mb-24 mx-1"}>
+				<div className='flex justify-start gap-1 lg:gap-10 md:gap-10'>
+					<div className='flex items-center gap-2  border-2 rounded-full border-white px-1 lg:px-3 md:px-3 py-1'>
+						<FontAwesomeIcon className='text-xs lg:text-base md:text-base' icon={faBed} />
+						<span className='text-xs lg:text-base md:text-base'>Stays</span>
 					</div>
-					<div className='flex items-center gap-3'>
-						<FontAwesomeIcon icon={faPlane} />
-						<span>Flights</span>
+					<div className='flex items-center gap-1 lg:gap-3 md:gap-3'>
+						<FontAwesomeIcon className='text-xs lg:text-base md:text-base' icon={faPlane} />
+						<span className='text-xs lg:text-base md:text-base'>Flights</span>
 					</div>
-					<div className='flex items-center gap-3'>
-						<FontAwesomeIcon icon={faCar} />
-						<span>Car rentals</span>
+					<div className='flex items-center gap-1 lg:gap-3 md:gap-3'>
+						<FontAwesomeIcon className='text-xs lg:text-base md:text-base' icon={faCar} />
+						<span className='text-xs lg:text-base md:text-base'>Car rentals</span>
 					</div>
-					<div className='flex items-center gap-3'>
-						<FontAwesomeIcon icon={faBed} />
-						<span>Attractions</span>
+					<div className='flex items-center gap-1 lg:gap-3 md:gap-3'>
+						<FontAwesomeIcon className='text-xs lg:text-base md:text-base' icon={faBed} />
+						<span className='text-xs lg:text-base md:text-base'>Attractions</span>
 					</div>
-					<div className='flex items-center gap-3'>
-						<FontAwesomeIcon icon={faTaxi} />
-						<span>Airport Taxis</span>
+					<div className='flex items-center gap-1 lg:gap-3 md:gap-3'>
+						<FontAwesomeIcon className='text-xs lg:text-base md:text-base' icon={faTaxi} />
+						<span className='text-xs lg:text-base md:text-base'>Airport Taxis</span>
 					</div>
 				</div>
 				{type !== "list" &&
 					<>
-						<h1 className="text-4xl font-bold my-3">
+						<h1 className="text-xl lg:text-4xl  md:text-4xl font-bold my-3">
 							A lifetime of discounts? It's Genius.
 						</h1>
 						<p className="my-3">
@@ -71,16 +71,16 @@ export const Header = ({ type }) => {
 							more with a free Lamabooking account
 						</p>
 						<button className="bg-green-400 text-white px-4 py-1 rounded">Sign in / Register</button>
-						<div className='h-12 bg-white 400  border-2 border-yellow-600 flex items-center justify-around pl-3 py-2 rounded-lg absolute -bottom-6 w-11/12 mx-auto '>
-							<div className='flex items-center gap-3'>
-								<FontAwesomeIcon icon={faBed} className='text-gray-400' />
-								<input className='border-none outline-none text-gray-400 ' type='text' placeholder='where are you going?'
+						<div className='h-14 md:h12 lg:h-12 bg-white 400  border-2 border-yellow-600 flex items-center justify-around pl-0.5 md:pl-3 lg:pl-3 py-2 rounded-lg absolute -bottom-6  md:w-11/12 lg:w-11/12 md:mx-auto lg:mx-auto '>
+							<div className='flex items-center gap-1 w-1/4'>
+								<FontAwesomeIcon icon={faBed} className='text-gray-400  text-xs lg:text-base md:text-base' />
+								<input className='-none text-xs  text-gray-400    outline-none  ' type='text' placeholder='Destination'
 									onChange={(e) => setDestination(e.target.value)}
 								/>
 							</div>
-							<div className='flex items-center gap-3'>
-								<FontAwesomeIcon icon={faCalendarDays} className='text-gray-400' />
-								<span onClick={() => setOpenDate(!openDate)} className='text-gray-400 cursor-pointer'>{`${format(date[0].startDate, "MM/dd/yyyy")}
+							<div className='flex items-center  gap-2 lg:w-1/4 md:w-1/4 w-1/6 -ms-10'>
+								<FontAwesomeIcon icon={faCalendarDays} className='text-gray-400 text-xs lg:text-base md:text-base' />
+								<span onClick={() => setOpenDate(!openDate)} className='text-gray-400 text-xs lg:text-base md:text-base cursor-pointer'>{`${format(date[0].startDate, "MM/dd/yyyy")}
 						to  ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
 								{openDate && <DateRange
 									editableDateInputs={true}
@@ -91,12 +91,12 @@ export const Header = ({ type }) => {
 									minDate={new Date()}
 								/>}
 							</div>
-							<div className='flex items-center gap-3'>
-								<FontAwesomeIcon icon={faPerson} className='text-gray-400 ' />
-								<span onClick={() => setOpenOptions(!openOptions)} className='text-gray-400 cursor-pointer'>{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
+							<div className='flex items-center gap-2 -ms-3 lg:w-1/4 md:w-1/4 w-1/4 '>
+								<FontAwesomeIcon icon={faPerson} className='text-gray-400 text-xs lg:text-base md:text-base ' />
+								<span onClick={() => setOpenOptions(!openOptions)} className='text-gray-400 text-xs lg:text-base md:text-base cursor-pointer'>{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
 								{
 									openOptions &&
-									<div className="absolute top-12 bg-white text-gray-400  border rounded-md shadow-slate-300 shadow-xl flex flex-col justify-between z-10">
+									<div className="absolute top-12 bg-white text-gray-400 text-xs lg:text-base md:text-base  border rounded-md shadow-slate-300 shadow-xl flex flex-col justify-between z-10">
 										<div className="w-48 flex justify-around gap-3 m-3 ">
 											<span>Adult</span>
 											<div className='flex items-center gap-3 font-semibold text-black'>
@@ -124,8 +124,8 @@ export const Header = ({ type }) => {
 									</div>
 								}
 							</div>
-							<div className='flex items-center gap-3'>
-								<button className='bg-green-600 text-white px-4 py-1 rounded' onClick={handleSearch}>Search</button>
+							<div className='flex items-center '>
+								<button className='bg-green-600 text-xs text-white absolute right-1 px-4  lg:py-2 py-4 rounded' onClick={handleSearch}>Search</button>
 							</div>
 						</div>
 					</>
